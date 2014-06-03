@@ -3,6 +3,7 @@ package com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.plugins.BuildAugmentor;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.plugins.bfa.Analysis;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.plugins.claim.Claim;
+
 import hudson.model.AbstractBuild;
 import hudson.model.Result;
 import hudson.model.Run;
@@ -170,4 +171,9 @@ public class BuildView implements BuildViewModel {
         this.systemTime = systemTime;
         this.augmentor = augmentor;
     }
+
+	@Override
+	public String triggeredBy() {
+		return build.getCauses().get(0).getShortDescription();
+	}
 }

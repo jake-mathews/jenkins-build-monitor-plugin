@@ -87,4 +87,9 @@ public class NullBuildView implements BuildViewModel {
     public List<String> knownFailures() {
         return null;
     }
+
+	@Override
+	public String triggeredBy() {
+		return "";
+	}
 }

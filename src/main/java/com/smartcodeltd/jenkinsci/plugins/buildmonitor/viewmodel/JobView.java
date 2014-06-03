@@ -136,6 +136,11 @@ public class JobView {
     public List<String> knownFailures() {
         return lastCompletedBuild().knownFailures();
     }
+    
+    @JsonProperty
+    public String triggeredBy(){
+    	return lastBuild().triggeredBy();
+    }
 
     public String toString() {
         return name();
